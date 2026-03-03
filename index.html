@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Althea Esparcia | Sales & Customer Specialist</title>
+    <title>Althea Esparcia | CX & Strategic Sales Specialist</title>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -13,7 +13,7 @@
             --text-secondary: #a1a1a1;
             --accent-green: #95E2D1;
             --accent-pink: #FF4D8D;
-            --accent-yellow: #FFD700;
+            --accent-gradient: linear-gradient(135deg, #FF4D8D 0%, #FFD700 100%);
             --border: #262626;
         }
 
@@ -23,9 +23,10 @@
             color: var(--text); 
             font-family: 'Inter', sans-serif; 
             line-height: 1.6;
-            scroll-behavior: smooth; /* This makes the "jump" to contact look smooth */
+            scroll-behavior: smooth;
         }
 
+        /* NAVIGATION */
         nav {
             display: flex;
             justify-content: space-between;
@@ -34,250 +35,288 @@
             position: sticky;
             top: 0;
             z-index: 100;
-            background: rgba(10, 10, 10, 0.9);
-            backdrop-filter: blur(10px);
+            background: rgba(10, 10, 10, 0.8);
+            backdrop-filter: blur(15px);
             border-bottom: 1px solid var(--border);
         }
-        .nav-logo { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; font-size: 1.2rem; }
-        .nav-links a { color: var(--text-secondary); text-decoration: none; margin-left: 30px; font-size: 0.9rem; font-weight: 500; transition: 0.3s; }
+        .nav-logo { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; font-size: 1.2rem; letter-spacing: -0.5px; }
+        .nav-links a { color: var(--text-secondary); text-decoration: none; margin-left: 30px; font-size: 0.9rem; font-weight: 600; transition: 0.3s; }
         .nav-links a:hover { color: var(--accent-pink); }
 
+        /* HERO SECTION */
         header { 
-            padding: 80px 8%; 
+            padding: 100px 8%; 
             display: grid;
             grid-template-columns: 1.2fr 0.8fr;
             gap: 40px;
             align-items: center;
         }
-        .hero-text h2 { font-size: 1rem; color: var(--accent-green); text-transform: uppercase; letter-spacing: 3px; margin-bottom: 15px; font-weight: 600; }
-        .hero-text h1 { font-family: 'Plus Jakarta Sans', sans-serif; font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 800; margin-bottom: 25px; line-height: 1.1; }
-        .hero-desc { font-size: 1.15rem; color: var(--text-secondary); max-width: 550px; margin-bottom: 45px; }
+        .position-tag { 
+            font-size: 0.85rem; 
+            color: var(--accent-green); 
+            text-transform: uppercase; 
+            letter-spacing: 3px; 
+            margin-bottom: 15px; 
+            font-weight: 800;
+            display: inline-block;
+            background: rgba(149, 226, 209, 0.1);
+            padding: 4px 12px;
+            border-radius: 50px;
+        }
+        .hero-text h1 { 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+            font-size: clamp(2.5rem, 5vw, 4.5rem); 
+            font-weight: 800; 
+            margin-bottom: 25px; 
+            line-height: 1.1; 
+            background: linear-gradient(to right, #fff, #a1a1a1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero-desc { font-size: 1.2rem; color: var(--text-secondary); max-width: 550px; margin-bottom: 45px; }
         
         .cta-group { display: flex; gap: 15px; flex-wrap: wrap; }
-        
-        .btn-cv { 
-            background: var(--text); 
-            color: var(--bg); 
-            padding: 16px 32px; 
-            border-radius: 12px; 
-            text-decoration: none; 
-            font-weight: 700; 
-            transition: 0.3s;
-        }
-        .btn-cv:hover { background: var(--accent-pink); color: white; transform: translateY(-3px); }
-
-        .btn-contact-alt { 
-            background: transparent;
-            color: var(--text);
-            border: 1px solid var(--border);
-            padding: 16px 32px; 
-            border-radius: 12px; 
-            text-decoration: none; 
-            font-weight: 700; 
-            transition: 0.3s;
-        }
+        .btn-cv { background: var(--text); color: var(--bg); padding: 18px 36px; border-radius: 14px; text-decoration: none; font-weight: 800; transition: 0.3s; border: none; }
+        .btn-cv:hover { background: var(--accent-pink); color: white; transform: translateY(-3px); box-shadow: 0 10px 20px rgba(255, 77, 141, 0.3); }
+        .btn-contact-alt { background: transparent; color: var(--text); border: 1px solid var(--border); padding: 18px 36px; border-radius: 14px; text-decoration: none; font-weight: 800; transition: 0.3s; }
         .btn-contact-alt:hover { border-color: var(--accent-green); color: var(--accent-green); }
 
+        /* SPOTLIGHT CANVAS */
         .canvas {
-            background-color: #f3f3f3;
+            background-color: #ffffff;
             margin: 0 40px;
             border-radius: 40px;
-            padding: 100px 0;
+            padding: 80px 8%;
             position: relative;
-            display: flex;
-            justify-content: center;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
             overflow: hidden;
-            border: 1px solid #ddd;
-            background-image: radial-gradient(#ccc 1.5px, transparent 1.5px);
-            background-size: 30px 30px;
+            box-shadow: 0 40px 100px rgba(0,0,0,0.5);
         }
+        .profile-side { position: relative; display: flex; justify-content: center; }
+        .profile-side::after {
+            content: "";
+            position: absolute;
+            width: 300px; height: 300px;
+            background: var(--accent-gradient);
+            filter: blur(80px);
+            opacity: 0.2;
+            z-index: 1;
+        }
+
+        .info-side { padding-left: 40px; z-index: 5; color: #111; }
+        .info-side h3 { font-family: 'Plus Jakarta Sans'; font-weight: 800; font-size: 1.5rem; margin-bottom: 25px; color: #000; }
+        .spotlight-list { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 25px; }
+        .spotlight-label { display: block; font-weight: 800; font-size: 0.7rem; color: #999; text-transform: uppercase; margin-bottom: 5px; }
+        .spotlight-value { font-size: 1rem; font-weight: 700; color: #000; line-height: 1.3; }
+
         .profile-container {
-            width: 320px;
-            height: 400px;
-            background: #111;
-            border-radius: 25px;
-            z-index: 2;
-            box-shadow: 0 30px 60px rgba(0,0,0,0.1);
+            width: 300px; height: 380px;
+            background: #111; border-radius: 30px;
+            z-index: 2; border: 12px solid #fff;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
             overflow: hidden;
-            border: 10px solid white;
         }
         .profile-container img { width: 100%; height: 100%; object-fit: cover; }
 
         .badge {
             position: absolute;
-            padding: 14px 24px;
-            font-weight: 800;
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            border: 2px solid #000;
-            box-shadow: 4px 4px 0px #000;
-            z-index: 10;
+            padding: 12px 20px; font-weight: 800; font-size: 0.75rem; text-transform: uppercase;
+            border: 2px solid #000; box-shadow: 4px 4px 0px #000; z-index: 10;
         }
-        .b1 { background: var(--accent-green); top: 15%; left: 15%; transform: rotate(-6deg); }
-        .b2 { background: var(--accent-pink); top: 25%; right: 15%; transform: rotate(5deg); color: #fff; }
-        .b3 { background: var(--accent-yellow); bottom: 15%; left: 18%; transform: rotate(-3deg); }
-        .b4 { background: #fff; bottom: 20%; right: 18%; transform: rotate(7deg); border-radius: 30px; }
+        .b1 { background: var(--accent-green); top: -10px; left: -10px; transform: rotate(-8deg); }
+        .b2 { background: var(--accent-pink); bottom: -10px; right: -10px; transform: rotate(8deg); color: #fff; }
 
-        .section-container { padding: 80px 8%; border-top: 1px solid var(--border); }
-        .section-title { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 2rem; font-weight: 800; margin-bottom: 40px; color: var(--text); }
+        /* SECTIONS */
+        .section-container { padding: 100px 8%; border-top: 1px solid var(--border); }
+        .section-title { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 2.5rem; font-weight: 800; margin-bottom: 50px; color: var(--text); }
         
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 20px;
+        .skills-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; }
+        .skill-item { 
+            background: var(--surface); padding: 25px; border-radius: 16px; border: 1px solid var(--border); 
+            font-weight: 600; display: flex; align-items: center; gap: 15px; transition: 0.3s; 
         }
-        .skill-item {
-            background: var(--surface);
-            padding: 20px;
-            border-radius: 12px;
-            border: 1px solid var(--border);
-            font-weight: 500;
-            display: flex;
-            align-items: center; gap: 12px;
-        }
-        .skill-item::before { content: "✓"; color: var(--accent-green); font-weight: 900; }
+        .skill-item:hover { border-color: var(--accent-pink); transform: translateY(-5px); }
+        .skill-item::before { content: "★"; color: var(--accent-yellow); font-size: 1.2rem; }
 
-        .card-grid { display: grid; grid-template-columns: 1fr; gap: 0; }
-        .item-card { display: grid; grid-template-columns: 220px 1fr; padding: 40px 0; border-bottom: 1px solid var(--border); }
-        .item-card:last-child { border-bottom: none; }
-        .item-date { color: var(--text-secondary); font-weight: 600; }
-        .item-title { font-size: 1.6rem; margin-bottom: 5px; font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; }
-        .item-subtitle { color: var(--accent-pink); font-weight: 700; margin-bottom: 15px; }
-        .item-details { color: var(--text-secondary); list-style: none; }
-        .item-details li { margin-bottom: 8px; position: relative; padding-left: 20px; }
-        .item-details li::before { content: "→"; position: absolute; left: 0; color: var(--accent-green); }
+        .item-card { display: grid; grid-template-columns: 240px 1fr; padding: 50px 0; border-bottom: 1px solid var(--border); transition: 0.3s; }
+        .item-card:hover { padding-left: 20px; }
+        .item-date { color: var(--accent-green); font-weight: 800; font-size: 0.9rem; }
+        .item-title { font-size: 1.8rem; margin-bottom: 8px; font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; }
+        .item-subtitle { color: var(--accent-pink); font-weight: 700; margin-bottom: 15px; font-size: 1.1rem; }
+        .item-details li { margin-bottom: 10px; color: var(--text-secondary); list-style: none; position: relative; padding-left: 25px; }
+        .item-details li::before { content: "→"; position: absolute; left: 0; color: var(--accent-green); font-weight: 800; }
 
+        /* FOOTER */
         footer {
-            padding: 120px 8%;
-            background: var(--surface);
-            border-top: 1px solid var(--border);
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-end;
+            padding: 120px 8%; background: #000; border-top: 1px solid var(--border);
+            display: flex; justify-content: space-between; align-items: center;
         }
-        .contact-large { font-family: 'Plus Jakarta Sans', sans-serif; font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 800; line-height: 1.1; margin-bottom: 20px; }
-        .contact-link { color: var(--accent-green); text-decoration: none; font-size: 1.5rem; font-weight: 600; transition: 0.3s; display: block; margin-top: 10px; }
-        .contact-link:hover { color: var(--text); }
+        .contact-large { font-family: 'Plus Jakarta Sans', sans-serif; font-size: clamp(2.5rem, 6vw, 4rem); font-weight: 800; line-height: 1; margin-bottom: 20px; }
+        .contact-link { color: var(--accent-green); text-decoration: none; font-size: 1.8rem; font-weight: 700; transition: 0.3s; display: block; }
+        .contact-link:hover { color: var(--accent-pink); transform: scale(1.02); }
 
         @media (max-width: 900px) {
             header { grid-template-columns: 1fr; text-align: center; }
             .cta-group { justify-content: center; }
-            .item-card { grid-template-columns: 1fr; }
-            .badge { position: relative; transform: none !important; display: inline-block; margin: 10px; }
-            footer { flex-direction: column; align-items: flex-start; gap: 50px; }
+            .canvas { grid-template-columns: 1fr; text-align: center; padding: 60px 20px; }
+            .info-side { padding-left: 0; margin-top: 50px; }
+            .spotlight-list { grid-template-columns: 1fr; }
+            .item-card { grid-template-columns: 1fr; gap: 20px; }
+            footer { flex-direction: column; text-align: center; gap: 40px; }
         }
     </style>
 </head>
 <body>
 
     <nav>
-        <div class="nav-logo">ALTHEA ESPARCIA</div>
+        <div class="nav-logo">ALTHEA E.</div>
         <div class="nav-links">
-            <a href="#skills">Skills</a>
+            <a href="#skills">Expertise</a>
             <a href="#work">Experience</a>
             <a href="#education">Education</a>
-            <a href="#contact">Contact</a>
+            <a href="#contact">Say Hello!</a>
         </div>
     </nav>
 
     <header>
         <div class="hero-text">
-            <h2>Davao City, PH</h2>
-            <h1>Althea Esparcia</h1>
+            <span class="position-tag">CX & Strategic Sales Specialist</span>
+            <h1>Turning customer<br>chats into growth.</h1>
             <p class="hero-desc">
-                High-performance Sales and Customer Service professional specialized in driving revenue growth and delivering elite client support.
+                I'm Althea, a passionate performance professional dedicated to elite client support and revenue-driven strategies. Currently thriving at <b>VXI Global Holdings</b>.
             </p>
             <div class="cta-group">
-                <a href="althea_cv.pdf" download="Althea_Esparcia_CV" class="btn-cv">Download CV</a>
-                <a href="#contact" class="btn-contact-alt">Get in Touch</a>
+                <a href="althea_cv.pdf" download="Althea_Esparcia_CV" class="btn-cv">Download My CV</a>
+                <a href="#contact" class="btn-contact-alt">Get In Touch</a>
             </div>
         </div>
     </header>
 
     <section class="canvas">
-        <div class="badge b1">TOP SELLER ★<br>30% GOAL SURPASS</div>
-        <div class="badge b2">CRM SPECIALIST</div>
-        <div class="badge b3">UPSELLING STRATEGY</div>
-        <div class="badge b4">DAVAO CITY, PH</div>
-        <div class="profile-container">
-            <img src="mypic.jpeg" alt="Althea Esparcia Profile">
+        <div class="profile-side">
+            <div class="badge b1">TOP PERFORMER</div>
+            <div class="badge b2">DAVAO CITY, PH</div>
+            <div class="profile-container">
+                <img src="mypic.jpeg" alt="Althea Esparcia">
+            </div>
+        </div>
+
+        <div class="info-side">
+            <h3>Professional Spotlight</h3>
+            <ul class="spotlight-list">
+                <li class="spotlight-item">
+                    <span class="spotlight-label">Specialty</span>
+                    <span class="spotlight-value">Strategic Upselling & CX</span>
+                </li>
+                <li class="spotlight-item">
+                    <span class="spotlight-label">Superpower</span>
+                    <span class="spotlight-value">Empathy-Driven Sales</span>
+                </li>
+                <li class="spotlight-item">
+                    <span class="spotlight-label">Track Record</span>
+                    <span class="spotlight-value">30% Sales Increase</span>
+                </li>
+                <li class="spotlight-item">
+                    <span class="spotlight-label">Languages</span>
+                    <span class="spotlight-value">English & Tagalog</span>
+                </li>
+                <li class="spotlight-item">
+                    <span class="spotlight-label">Tech Tools</span>
+                    <span class="spotlight-value">Salesforce & CRM</span>
+                </li>
+                <li class="spotlight-item">
+                    <span class="spotlight-label">Status</span>
+                    <span class="spotlight-value">Ready for New Challenges</span>
+                </li>
+            </ul>
         </div>
     </section>
 
     <section class="section-container" id="skills">
         <h2 class="section-title">Core Expertise</h2>
         <div class="skills-grid">
-            <div class="skill-item">Sales & Upselling Strategies</div>
-            <div class="skill-item">Salesforce & CRM Tools</div>
-            <div class="skill-item">Conflict Resolution</div>
-            <div class="skill-item">Active Listening & Negotiation</div>
-            <div class="skill-item">Microsoft Office Suite</div>
-            <div class="skill-item">Customer Retention</div>
+            <div class="skill-item">Inbound/Outbound Sales Excellence</div>
+            <div class="skill-item">Advanced Conflict Resolution</div>
+            <div class="skill-item">Billing & Account Strategy</div>
+            <div class="skill-item">Client Loyalty & Retention</div>
+            <div class="skill-item">Insurance Product Education</div>
+            <div class="skill-item">Dynamic Negotiation Skills</div>
         </div>
     </section>
 
     <section class="section-container" id="work">
-        <h2 class="section-title">Work Experience</h2>
-        <div class="card-grid">
-            <div class="item-card">
-                <div class="item-date">2025 — Present</div>
-                <div class="item-content">
-                    <h3 class="item-title">Customer Service Sales Representative</h3>
-                    <p class="item-subtitle">VXI Global Holdings</p>
-                    <ul class="item-details">
-                        <li>Assisting customers with product inquiries, orders, and service requests.</li>
-                        <li>Handling billing, account updates, and payment processing.</li>
-                        <li>Resolving customer complaints with effective solutions.</li>
-                    </ul>
-                </div>
+        <h2 class="section-title">Career Journey</h2>
+        
+        <div class="item-card">
+            <div class="item-date">2025 — PRESENT</div>
+            <div class="item-content">
+                <h3 class="item-title">Customer Service Sales Specialist</h3>
+                <p class="item-subtitle">VXI Global Holdings</p>
+                <ul class="item-details">
+                    <li>Transforming inquiries into sales opportunities while maintaining high CSAT.</li>
+                    <li>Expertly managing complex billing cycles and account resolutions.</li>
+                    <li>Collaborating with global teams to ensure elite customer satisfaction.</li>
+                </ul>
             </div>
+        </div>
 
-            <div class="item-card">
-                <div class="item-date">2023 — 2024</div>
-                <div class="item-content">
-                    <h3 class="item-title">Customer Service Sales Representative</h3>
-                    <p class="item-subtitle">Fil-Am Leads BPO Services INC</p>
-                    <ul class="item-details">
-                        <li>Recommended and upsold products based on customer needs.</li>
-                        <li>Exceeded sales targets consistently by 30%.</li>
-                    </ul>
-                </div>
+        <div class="item-card">
+            <div class="item-date">2023 — 2024</div>
+            <div class="item-content">
+                <h3 class="item-title">Customer Service Sales Representative</h3>
+                <p class="item-subtitle">Fil-Am Leads BPO Services INC</p>
+                <ul class="item-details">
+                    <li>Achieved the "Top Seller" status by surpassing monthly targets by 30%.</li>
+                    <li>Mastered the art of upselling through personalized product recommendations.</li>
+                    <li>Handled high-pressure escalations with calm and effective solutions.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="item-card">
+            <div class="item-date">2022 — 2023</div>
+            <div class="item-content">
+                <h3 class="item-title">Outbound Life Insurance Sales Rep</h3>
+                <p class="item-subtitle">Fil-Am Leads BPO Services INC</p>
+                <ul class="item-details">
+                    <li>Educated prospective clients on complex financial security products.</li>
+                    <li>Built trust through transparent and professional outbound communication.</li>
+                    <li>Consistently met aggressive daily call volume and conversion targets.</li>
+                </ul>
             </div>
         </div>
     </section>
 
     <section class="section-container" id="education">
-        <h2 class="section-title">Educational History</h2>
-        <div class="card-grid">
-            <div class="item-card">
-                <div class="item-date">2023 — 2024</div>
-                <div class="item-content">
-                    <h3 class="item-title">Bachelor of Science in Nursing</h3>
-                    <p class="item-subtitle">University of Mindanao, Davao City</p>
-                    <p style="color: var(--text-secondary);">Undergraduate Studies</p>
-                </div>
+        <h2 class="section-title">Education</h2>
+        <div class="item-card">
+            <div class="item-date">2023 — 2024</div>
+            <div class="item-content">
+                <h3 class="item-title">Bachelor of Science in Nursing</h3>
+                <p class="item-subtitle">University of Mindanao, Davao City</p>
+                <p style="color: var(--text-secondary);">(Undergraduate Studies)</p>
             </div>
-
-            <div class="item-card">
-                <div class="item-date">2022 — 2023</div>
-                <div class="item-content">
-                    <h3 class="item-title">Senior High School Graduate</h3>
-                    <p class="item-subtitle">Dona Carmen Denia National High School</p>
-                    <p style="color: var(--text-secondary);">HUMSS Strand</p>
-                </div>
+        </div>
+        <div class="item-card">
+            <div class="item-date">2022 — 2023</div>
+            <div class="item-content">
+                <h3 class="item-title">K-12 Senior High School Graduate</h3>
+                <p class="item-subtitle">Dona Carmen Denia National High School</p>
+                <p style="color: var(--text-secondary);">HUMSS Strand</p>
             </div>
         </div>
     </section>
 
     <footer id="contact">
         <div class="footer-left">
-            <h2 class="contact-large">Ready to start<br>a project?</h2>
+            <h2 class="contact-large">Let's create<br>something amazing!</h2>
             <a href="mailto:altheaesparcia16@gmail.com" class="contact-link">altheaesparcia16@gmail.com</a>
-            <a href="tel:09272496288" class="contact-link">0927 249 6288</a>
+            <a href="tel:09272496288" class="contact-link">+63 927 249 6288</a>
         </div>
-        <div class="footer-right" style="text-align: right;">
-            <p style="opacity: 0.4;">&copy; 2025 Althea Esparcia</p>
-            <p style="opacity: 0.4;">Based in Davao City, PH</p>
+        <div class="footer-right">
+            <p style="opacity: 0.5;">Davao City, PH &bull; 2026</p>
         </div>
     </footer>
 
